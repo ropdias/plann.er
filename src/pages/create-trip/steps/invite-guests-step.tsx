@@ -22,19 +22,17 @@ export function InviteGuestsStep({
         <UserRoundPlus className="size-5 text-zinc-400" />
         {emailsToInvite.length > 0 ? (
           <span className="text-zinc-100 text-lg flex-1">
-            {emailsToInvite.length} pessoas(s) convidada(s)
+            {emailsToInvite.length} guest(s) invited
           </span>
         ) : (
-          <span className="text-zinc-400 text-lg flex-1">
-            Quem estará na viagem?
-          </span>
+          <span className="text-zinc-400 text-lg flex-1">Who will be on the trip?</span>
         )}
       </button>
 
       <div className="w-px h-6 bg-zinc-800" />
 
       <Button onClick={openConfirmTripModal} variant="primary">
-        Confirmar viagem
+        Confirm trip
         <ArrowRight className="size-5" />
       </Button>
     </div>

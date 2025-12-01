@@ -35,9 +35,9 @@ export function DestinationAndDateStep({
     eventStartAndEndDates &&
     eventStartAndEndDates.from &&
     eventStartAndEndDates.to
-      ? format(eventStartAndEndDates.from, "d' de ' LLL")
-          .concat(' até ')
-          .concat(format(eventStartAndEndDates.to, "d' de ' LLL"))
+      ? format(eventStartAndEndDates.from, 'd LLL')
+          .concat(' to ')
+          .concat(format(eventStartAndEndDates.to, 'd LLL'))
       : null;
 
   return (
@@ -47,7 +47,7 @@ export function DestinationAndDateStep({
         <input
           disabled={isGuestsInputOpen}
           type="text"
-          placeholder="Para onde você vai?"
+          placeholder="Where are you going?"
           className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1"
           onChange={(event) => setDestination(event.target.value)}
         />
@@ -59,9 +59,7 @@ export function DestinationAndDateStep({
         className="flex items-center gap-2 text-left w-[240px]"
       >
         <Calendar className="size-5 text-zinc-400" />
-        <span className="text-lg text-zinc-400 w-40 flex-1">
-          {displayedDate || 'Quando?'}
-        </span>
+        <span className="text-lg text-zinc-400 w-40 flex-1">{displayedDate || 'When?'}</span>
       </button>
 
       {isDatePickerOpen && (
@@ -69,7 +67,7 @@ export function DestinationAndDateStep({
           <div className="rounded-xl py-5 px-6 shadow-shape bg-zinc-900 space-y-5">
             <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <h2 className="text-lg font-semibold">Selecione a data</h2>
+                <h2 className="text-lg font-semibold">Select the date</h2>
                 <button type="button" onClick={closeDatePicker}>
                   <X className="size-5 text-zinc-400" />
                 </button>
@@ -89,12 +87,12 @@ export function DestinationAndDateStep({
 
       {isGuestsInputOpen ? (
         <Button onClick={closeGuestsInput} variant="secondary">
-          Alterar local/data
+          Change location/date
           <Settings2 className="size-5" />
         </Button>
       ) : (
         <Button onClick={openGuestsInput} variant="primary">
-          Continuar
+          Continue
           <ArrowRight className="size-5" />
         </Button>
       )}

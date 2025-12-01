@@ -34,14 +34,12 @@ export function CreateActivityModal({
       <div className="w-[640px] rounded-xl py-5 px-6 shadow-shape bg-zinc-900 space-y-5">
         <div className="space-y-2">
           <div className="flex items-center justify-between">
-            <h2 className="text-lg font-semibold">Cadastrar atividade</h2>
+            <h2 className="text-lg font-semibold">Create activity</h2>
             <button type="button" onClick={closeCreateActivityModal}>
               <X className="size-5 text-zinc-400" />
             </button>
           </div>
-          <p className="text-sm text-zinc-400">
-            Todos os convidados podem visualizar as atividades.
-          </p>
+          <p className="text-sm text-zinc-400">All guests can view activities.</p>
         </div>
 
         <form onSubmit={createActivity} className="space-y-3">
@@ -49,7 +47,7 @@ export function CreateActivityModal({
             <Tag className="text-zinc-400 size-5" />
             <input
               name="title"
-              placeholder="Qual a atividade?"
+              placeholder="What's the activity?"
               className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1"
             />
           </div>
@@ -59,14 +57,12 @@ export function CreateActivityModal({
             <input
               type="datetime-local"
               name="occurs_at"
-              placeholder="Data e horário da atividade"
+              placeholder="Activity date and time"
               className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1"
             />
           </div>
 
-          <Button variant="primary" size="full">
-            Salvar Atividade
-          </Button>
+          <Button variant="primary" size="full">Save Activity</Button>
         </form>
       </div>
     </div>
